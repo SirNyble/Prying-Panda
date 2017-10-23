@@ -9,7 +9,7 @@ import React from "react";
 // when the pathname is exactly the string "/"
 const Home = () => (
     <div>
-        <p class="row col-xs-2"> HELLO WORLD </p>
+        <p> HELLO WORLD </p>
     </div>
 );
 
