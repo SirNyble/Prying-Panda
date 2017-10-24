@@ -1,16 +1,39 @@
 import "./Home.css";
-
+import axios from 'axios';
 import React from "react";
 
-// The Main component renders one of the three provided
-// Routes (provided that one matches). Both the /roster
-// and /schedule routes will match any pathname that starts
-// with /roster or /schedule. The / route will only match
-// when the pathname is exactly the string "/"
-const Home = () => (
-    <div>
-        <p> HELLO WORLD </p>
-    </div>
-);
+// The Home component
+// Currently does not do much
+class Home extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {userName: "",
+                        bannerPicture: "",
+                        profilePicture: ""};
+    }
+
+    componentDidMount() {
+        axios.get("/api/search/Nyble")
+          .then(res => {
+              console.log(res);
+            this.setState({userName: res["data"]["userName"], bannerPicture: res["data"]["bannerPicture"], profilePicture: res["data"]["profilePicture"] });
+          });
+      }
+
+    render() {
+        if(this.state.userName === "") {
+            return <div><p>LOADING</p></div>
+        }
+        return (
+            <div class="blended">
+                <p> {this.state.userName} </p>
+                <img src={this.state.profilePicture} />
+                <img src={this.state.bannerPicture} />
+
+            </div>  
+        );
+    }
+}
 
 export default Home;
