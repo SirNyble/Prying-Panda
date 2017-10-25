@@ -2,8 +2,8 @@
     text-align: left;
     display: block;
     float: left;
-    animation: App-logo-spin infinite 20s linear;
-    width: 70px;
+
+    width: 100px;
     height: 70px;
     padding-top: 5px;
     padding-left: 15px;
@@ -15,6 +15,7 @@
     height: 70px;
     color: rgb(255, 255, 255);
     padding: 0px;
+    width: 100%;
 }
 
 .App-title {

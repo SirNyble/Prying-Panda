@@ -1,6 +1,7 @@
 import "./Home.css";
 import axios from 'axios';
 import React from "react";
+import { Grid, Row, Col, Image} from "react-bootstrap";
 
 // The Home component
 // Currently does not do much
@@ -26,12 +27,10 @@ class Home extends React.Component {
             return <div><p>LOADING</p></div>
         }
         return (
-            <div class="blended">
-                <p> {this.state.userName} </p>
-                <img src={this.state.profilePicture} />
-                <img src={this.state.bannerPicture} />
-
-            </div>  
+            <div class="user">
+                <Image src={this.state.profilePicture} className="profile" alt="logo" rounded />
+                <Image src={this.state.bannerPicture} className="banner"/>
+            </div>
         );
     }
 }
