@@ -1,29 +1,14 @@
-.App-logo {
-    text-align: left;
-    display: block;
-    float: left;
-
-    width: 100px;
-    height: 70px;
-    padding-top: 5px;
-    padding-left: 15px;
-    padding-right: 25px;
+.app-logo {
+    height: 40px;
+    margin-right: 25%;
 }
 
-.App-header {
-    background-color: rgb(75, 67, 148);
-    height: 70px;
-    color: rgb(255, 255, 255);
-    padding: 0px;
-    width: 100%;
-}
-
-.App-title {
-    font-family: 'Roboto', 'Times New Roman', Times, serif;
-    display: block;
-    float: left;
+.app-title {
+    font-family: 'Impact', 'Times New Roman', Times, serif;
+    color: white;
+    float: left; 
     padding-top: 5px;
     font-size: 1.5em;
 
 }
-  
+   

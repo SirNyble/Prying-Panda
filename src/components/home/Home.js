@@ -1,7 +1,7 @@
 import "./Home.css";
 import axios from 'axios';
 import React from "react";
-import { Grid, Row, Col, Image} from "react-bootstrap";
+import { Image} from "react-bootstrap";
 
 // The Home component
 // Currently does not do much
