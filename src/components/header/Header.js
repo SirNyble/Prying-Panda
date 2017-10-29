@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { Jumbotron, Button, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, NavLink, InputGroup, InputGroupAddon, Input } from 'reactstrap';
+import { Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Input } from 'reactstrap';
 // import { Navbar, FormGroup, FormControl, Button} from "react-bootstrap";
 import "./Header.css";
 import logo from "./logo.png";
@@ -29,9 +28,9 @@ class Header extends React.Component {
                     <img src={logo} className="app-logo" alt="logo"/>
                 </NavbarBrand>
 
-                <div className="mr-auto">
-                    <h1 class="app-title">Wondering Wolf</h1>
-                </div>
+                <Col className="mr-auto" sm={4}>
+                    <h1 className="app-title">Wondering Wolf</h1>
+                </Col>
 
                 <NavbarToggler onClick={this.toggle} />
                 <Collapse isOpen={this.state.isOpen} navbar>
