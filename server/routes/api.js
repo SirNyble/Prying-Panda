@@ -21,9 +21,17 @@ router.get('/search/:userName', (req, res) => {
     MongoClient.connect(url, function(err, db) {
         if (err) throw err;
         let query = {userName: req.params.userName};
-        db.collection("users").findOne({}, function(err, result) {
+        console.log(query);
+        db.collection("users").findOne(query, function(err, result) {
             if (err) throw err;
-            res.send(result);
+            if(!result) {
+                res.status(500);
+                res.send({error: "User not found!"});
+            }
+            else {
+                res.send(result);
+            }
+            
             db.close();
         });
     }); 
