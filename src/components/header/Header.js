@@ -1,6 +1,6 @@
 import React from "react";
-import { Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Input } from 'reactstrap';
-// import { Navbar, FormGroup, FormControl, Button} from "react-bootstrap";
+ import { Container, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Input } from 'reactstrap';
+ 
 import "./Header.css";
 import logo from "./logo.png";
 
@@ -23,26 +23,28 @@ class Header extends React.Component {
 
     render() {
         return (
-            <Navbar className="navbar-light bg-dark" expand="sm">
-                <NavbarBrand className="mr-auto" href="/">
-                    <img src={logo} className="app-logo" alt="logo"/>
-                </NavbarBrand>
+            <Navbar  className="navbar-light bg-dark sticky-top" expand="sm">
+                <Container>
+                    <NavbarBrand className="mr-auto" href="/">
+                        <img src={logo} className="app-logo" alt="logo"/>
+                    </NavbarBrand>
 
-                <Col className="mr-auto" sm={4}>
-                    <h1 className="app-title">Wondering Wolf</h1>
-                </Col>
+                    <Col className="mr-auto" sm={4}>
+                        <h1 className="app-title">Wondering Wolf</h1>
+                    </Col>
 
-                <NavbarToggler onClick={this.toggle} />
-                <Collapse isOpen={this.state.isOpen} navbar>
-                    <Nav className="ml-auto" >
-                        <NavItem>
-                            <InputGroup >
-                                <InputGroupAddon ><i className="fa fa-search"></i></InputGroupAddon>
-                                <Input className="searchBar" placeholder="search" />
-                            </InputGroup>
-                        </NavItem>
-                    </Nav>
-                </Collapse>
+                    <NavbarToggler onClick={this.toggle} />
+                    <Collapse isOpen={this.state.isOpen} navbar>
+                        <Nav className="ml-auto" >
+                            <NavItem>
+                                <InputGroup >
+                                    <InputGroupAddon ><i className="fa fa-search"></i></InputGroupAddon>
+                                    <Input className="searchBar" placeholder="search" />
+                                </InputGroup>
+                            </NavItem>
+                        </Nav>
+                    </Collapse>
+                </Container>
             </Navbar>
         );
     }

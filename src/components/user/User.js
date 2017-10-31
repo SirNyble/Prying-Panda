@@ -1,7 +1,7 @@
 import "./User.css";
 import axios from 'axios';
 import React from "react";
-import { Image} from "react-bootstrap";
+import { Grid, Image, Col} from "react-bootstrap";
 
 // The User component
 // Displays a users profile
@@ -49,10 +49,13 @@ class User extends React.Component {
             return <div><p>LOADING</p></div>
         }
         return (
-            <div className="user">
+            <Grid  className="pictureArea">
+            <Col  className="user">
                 <Image src={this.state.profilePicture} className="profile" alt="logo" rounded />
                 <Image src={this.state.bannerPicture} className="banner"/>
-            </div>
+            </Col>
+            </Grid>
+            
         );
     }
 }
