@@ -1,14 +1,32 @@
-.app-logo {
-    height: 40px;
-    margin-right: 25%;
+.navbar {
+    margin-bottom: 5px;
+    position: sticky !important;
+    z-index: 2;
+    top: 0px;
+}
+.navbar-default .navbar-toggle{
+    height: auto;
+    vertical-align: center;
+    border: none !important;
+} 
+
+.navbar-toggle {
+    margin-top: 15px;
+}
+
+.input-group-addon {
+    width:auto;
+}
+
+.navbar-collapse.in,
+.navbar-collapse.collapsing {
+    clear: left;
 }
 
 .app-title {
-    font-family: 'Impact', 'Times New Roman', Times, serif;
-    color: white;
-    float: left; 
-    padding-top: 5px;
-    font-size: 1.5em;
+    font-family: 'Impact', 'Roboto', serif, Arial;
+    color: white !important;
+    font-size: 2.0em;
 
 }
    

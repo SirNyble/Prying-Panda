@@ -1,6 +1,5 @@
 import React from "react";
- import { Container, Col, Collapse, Navbar, NavbarToggler, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Input } from 'reactstrap';
- 
+import {Form, FormControl, Navbar, NavbarBrand, Grid, Nav, NavItem, InputGroup} from "react-bootstrap";
 import "./Header.css";
 import logo from "./logo.png";
 
@@ -14,37 +13,48 @@ class Header extends React.Component {
         this.state = {
           isOpen: false
         };
-      }
-      toggle() {
-        this.setState({
-          isOpen: !this.state.isOpen
-        });
-      }
+        this.searchUser = this.searchUser.bind(this);
+    }
+
+    toggle() {
+    this.setState({
+        isOpen: !this.state.isOpen
+    });
+    }
+
+    searchUser(event) {
+        console.log("BLAH");
+        console.log(event);
+        event.preventDefault();
+        window.location.href = '/user/Nyble';
+    }
 
     render() {
         return (
-            <Navbar  className="navbar-light bg-dark sticky-top" expand="sm">
-                <Container>
-                    <NavbarBrand className="mr-auto" href="/">
-                        <img src={logo} className="app-logo" alt="logo"/>
-                    </NavbarBrand>
-
-                    <Col className="mr-auto" sm={4}>
-                        <h1 className="app-title">Wondering Wolf</h1>
-                    </Col>
-
-                    <NavbarToggler onClick={this.toggle} />
-                    <Collapse isOpen={this.state.isOpen} navbar>
-                        <Nav className="ml-auto" >
-                            <NavItem>
-                                <InputGroup >
-                                    <InputGroupAddon ><i className="fa fa-search"></i></InputGroupAddon>
-                                    <Input className="searchBar" placeholder="search" />
-                                </InputGroup>
-                            </NavItem>
-                        </Nav>
-                    </Collapse>
-                </Container>
+            <Navbar inverse>
+                <Grid>
+                    <Navbar.Header >
+                        <NavbarBrand href="/">
+                            <img src={logo} alt="logo"/>
+                        </NavbarBrand>
+                        <Navbar.Text pullRight  className="app-title"> 
+                            Wondering Wolf
+                        </Navbar.Text>
+                        <Navbar.Toggle pullRight />
+                    </Navbar.Header>
+                    <Navbar.Collapse pullRight >
+                    <Nav pullRight  >
+                        <NavItem >
+                            <Form onSubmit={this.searchUser} >
+                            <InputGroup >
+                                <InputGroup.Addon ><i className="fa fa-search"></i></InputGroup.Addon>
+                                <FormControl type="text" placeholder="Search"/>
+                            </InputGroup>
+                            </Form>
+                        </NavItem>
+                    </Nav>
+                    </Navbar.Collapse>
+                </Grid> 
             </Navbar>
         );
     }
