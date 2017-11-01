@@ -4,6 +4,7 @@ p {
 
 .user {
     position: relative;
+    margin-bottom: 10px;
 }
 .profile {
     position: absolute;
@@ -20,4 +21,8 @@ p {
     width: 100%;
     max-height: 420px; 
     z-index: 0;
+}
+
+.filler {
+    padding: 2000px;
 }
